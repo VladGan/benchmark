@@ -14,6 +14,7 @@ java_library(
 
 checkstyle_test(
     name = "checkstyle",
-    targets = [":yaml_tool"],
-    license_type = "agpl"
+    include = [":yaml_tool"],
+    license_type = "agpl",
+    size = "small",
 )
