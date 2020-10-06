@@ -9,7 +9,7 @@ build:
         cp rootCA.jks /tmp/rootCA.jks
         bazel run //test:grakn-extractor -- dist/grakn-core-all-linux
         cd ./dist/grakn-core-all-linux/
-        SERVER_JAVAOPTS="-Djavax.net.ssl.trustStore=/tmp/rootCA.jks -Djavax.net.ssl.trustStorePassword=changeit" ./grakn server start -- \
+        ./grakn server start -- \
           --tracing-uri $GRABL_TRACING_URI \
           --tracing-username $GRABL_OWNER \
           --tracing-access-token $GRABL_TOKEN
@@ -22,7 +22,6 @@ build:
         wget "https://storage.googleapis.com/grabl-dev-secrets/rootCA.jks"
         cp rootCA.jks /tmp/rootCA.jks
         bazel run \
-          --jvmopt="-Djavax.net.ssl.trustStore=/tmp/rootCA.jks -Djavax.net.ssl.trustStorePassword=changeit" \
           //:simulation-small -- \
           --database grakn \
           --database-uri $GRABL_EXPORT_PERFORMANCE_SMALL_GRAKN_URI \
