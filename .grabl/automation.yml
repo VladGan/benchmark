@@ -1,5 +1,5 @@
 config:
-  version-candidate: 123123dsfdsfdsfsdf
+  version-candidate: VERSION
 build:
   quality:
       test-job:
