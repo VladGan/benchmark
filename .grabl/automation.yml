@@ -1,8 +1,14 @@
+config:
+  version-candidate: VERSION
 build:
-  performance:
-    test-performance-small-grakn-background:
-      machine: graknlabs-ubuntu-20.04-long
-      type: background
-      timeout: "18000"
+  quality:
+      test-job:
+        machine: graknlabs-ubuntu-20.04
+        script: |
+          echo 123
+release:
+  validation:
+    job:
+      machine: graknlabs-ubuntu-20.04
       script: |
-        echo 1
+        echo Released!
