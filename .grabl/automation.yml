@@ -7,9 +7,6 @@ build:
         script: |
           echo "$i iterations complete"
 release: 
-  filter:
-    owner: Phillammon
-    branch: master
   validation:
     job:
       machine: graknlabs-ubuntu-20.04
