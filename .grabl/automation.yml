@@ -5,9 +5,17 @@ build:
       test-job:
         machine: graknlabs-ubuntu-20.04
         script: |
-          echo 123
-release:
+          echo "$i iterations complete"
+release: 
+  filter:
+    owner: Phillammon
+    branch: master
   validation:
+    job:
+      machine: graknlabs-ubuntu-20.04
+      script: |
+        echo Released!
+  deployment:
     job:
       machine: graknlabs-ubuntu-20.04
       script: |
