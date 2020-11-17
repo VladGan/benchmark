@@ -14,4 +14,4 @@ release:
     job:
       machine: graknlabs-ubuntu-20.04
       script: |
-        echo Released!
+        echo Released!111
