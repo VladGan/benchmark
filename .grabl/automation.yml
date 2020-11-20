@@ -7,6 +7,11 @@ build:
         script: |
           echo "$i iterations complete"
 release: 
+  validation:
+    job:
+      machine: graknlabs-ubuntu-20.04
+      script: |
+        echo validation!111
   deployment:
     job:
       machine: graknlabs-ubuntu-20.04
