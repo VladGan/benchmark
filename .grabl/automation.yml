@@ -5,13 +5,7 @@ build:
       test-job:
         machine: graknlabs-ubuntu-20.04
         script: |
-          echo "$i iterations complete"
-release: 
-  deployment:
-    job:
-      machine: graknlabs-ubuntu-20.04
-      script: |
-        ECHO 1
+          ECHO 1
         ECHO 1
         ECHO 1
         ECHO 1
