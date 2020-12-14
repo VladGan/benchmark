@@ -7,4 +7,4 @@ build:
       dependency-analysis:
         machine: graknlabs-ubuntu-20.04
         script: |
-          bazel run @graknlabs_dependencies//grabl/analysis:dependency-analysis
+          echo $GRABL_URL
