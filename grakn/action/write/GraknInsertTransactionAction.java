@@ -17,7 +17,7 @@
 
 package grakn.simulation.grakn.action.write;
 
-import grakn.client.answer.ConceptMap;
+import grakn.client.concept.answer.ConceptMap;
 import grakn.simulation.common.action.write.InsertTransactionAction;
 import grakn.simulation.common.utils.Pair;
 import grakn.simulation.common.world.World;
@@ -69,18 +69,18 @@ public class GraknInsertTransactionAction extends InsertTransactionAction<GraknO
                             .has(LOCATION_NAME, countryName))
                     .insert(
                             Graql.var(TRANSACTION)
-                                    .isa(TRANSACTION)
                                     .rel(TRANSACTION_SELLER, Graql.var("c-seller"))
                                     .rel(TRANSACTION_BUYER, Graql.var("c-buyer"))
                                     .rel(TRANSACTION_MERCHANDISE, Graql.var(PRODUCT))
+                                    .isa(TRANSACTION)
     //                                .has(CURRENCY)  // TODO Add currency https://github.com/graknlabs/simulation/issues/31
                                     .has(VALUE, value)
                                     .has(PRODUCT_QUANTITY, productQuantity)
                                     .has(IS_TAXABLE, isTaxable),
                             Graql.var(LOCATES)
-                                    .isa(LOCATES)
                                     .rel(LOCATES_LOCATION, Graql.var(COUNTRY))
                                     .rel(LOCATES_LOCATED, Graql.var(TRANSACTION))
+                                    .isa(LOCATES)
                     );
     }
 

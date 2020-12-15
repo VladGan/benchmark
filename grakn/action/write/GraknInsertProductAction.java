@@ -17,7 +17,7 @@
 
 package grakn.simulation.grakn.action.write;
 
-import grakn.client.answer.ConceptMap;
+import grakn.client.concept.answer.ConceptMap;
 import grakn.simulation.common.action.write.InsertProductAction;
 import grakn.simulation.common.world.World;
 import grakn.simulation.grakn.driver.GraknOperation;
@@ -59,9 +59,9 @@ public class GraknInsertProductAction extends InsertProductAction<GraknOperation
                             .has(PRODUCT_NAME, productName)
                             .has(PRODUCT_DESCRIPTION, productDescription),
                     Graql.var(PRODUCED_IN)
-                            .isa(PRODUCED_IN)
                             .rel(PRODUCED_IN_PRODUCT, Graql.var(PRODUCT))
                             .rel(PRODUCED_IN_CONTINENT, Graql.var(CONTINENT))
+                            .isa(PRODUCED_IN)
             );
     }
 

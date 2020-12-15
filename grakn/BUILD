@@ -23,9 +23,12 @@ java_library(
         "@graknlabs_client_java//:client-java",
         "@graknlabs_grabl_tracing//client",
         "@graknlabs_graql//java:graql",
+        "@graknlabs_graql//java/pattern",
+        "@graknlabs_graql//java/query",
         "@maven//:com_google_guava_guava",
         "@maven//:org_apache_commons_commons_csv",
         "@maven//:org_slf4j_slf4j_api",
+
     ],
 )
 

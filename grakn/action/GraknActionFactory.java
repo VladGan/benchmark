@@ -17,7 +17,7 @@
 
 package grakn.simulation.grakn.action;
 
-import grakn.client.answer.ConceptMap;
+import grakn.client.concept.answer.ConceptMap;
 import grakn.simulation.common.action.ActionFactory;
 import grakn.simulation.common.action.SpouseType;
 import grakn.simulation.common.action.read.BirthsInCityAction;
