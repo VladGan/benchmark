@@ -1,21 +1,21 @@
 agents:
   # For each agent select a `mode`, `RUN` to run without tracing, `TRACE` to run with tracing, and `OFF` to not run at all
   - name: "marriage"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "personBirth"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "ageUpdate"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "parentship"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "relocation"
     mode: OFF # no
   - name: "company"
-    mode: RUN  # yes
+    mode: TRACE  # yes
   - name: "employment"
     mode: OFF  # no
   - name: "product"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "transaction"
     mode: OFF # yes
   - name: "friendship"
@@ -29,24 +29,24 @@ agents:
   #  - name: "findTransactionCurrency" # no, already disabled as it times out
   #    mode: TRACE
   - name: "arbitraryOneHop"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "twoHop"
-    mode: RUN # yes, contingent on parentship
+    mode: TRACE # yes, contingent on parentship
   - name: "threeHop"
     mode: OFF # no because of employment
   - name: "fourHop"
     mode: OFF # no because of employment
   - name: "findSpecificMarriage"
-    mode: RUN # yes
+    mode: TRACE # yes
   - name: "findSpecificPerson"
-    mode: RUN # yes
+    mode: TRACE # yes
 
 traceSampling:
   # Options: `"every"` for every K traces; `"log"` for logarithm with base N
   function: "every"
-  arg: 6
+  arg: 3
 
 randomSeed: 1
-iterations: 50
+iterations: 30
 scaleFactor: 5
 databaseName: "world"
