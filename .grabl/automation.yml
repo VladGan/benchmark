@@ -1,7 +1,7 @@
 build:
   performance:
     test-performance-small-grakn-background:
-      machine: graknlabs-ubuntu-20.04-java11
+      machine: graknlabs-ubuntu-20.04-java11-long
       type: background
       timeout: "18000"
       script: |
@@ -29,7 +29,7 @@ build:
         sudo systemctl start grakn
         export GRABL_EXPORT_PERFORMANCE_SMALL_GRAKN_URI="${HOSTNAME}:1729"
     test-performance-small-grakn:
-      machine: graknlabs-ubuntu-20.04-java11
+      machine: graknlabs-ubuntu-20.04-java11-long
       timeout: "18000"
       dependencies: [test-performance-small-grakn-background]
       script: |
