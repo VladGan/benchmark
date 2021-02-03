@@ -44,9 +44,9 @@ agents:
 traceSampling:
   # Options: `"every"` for every K traces; `"log"` for logarithm with base N
   function: "every"
-  arg: 10
+  arg: 50
 
 randomSeed: 1
-iterations: 100
+iterations: 1000
 scaleFactor: 3
 databaseName: "world"
