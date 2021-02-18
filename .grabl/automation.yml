@@ -1,7 +1,6 @@
 build:
   correctness:
     test-comparison-grakn-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       type: background
       timeout: "30m"
@@ -17,7 +16,6 @@ build:
         sleep 10s
         tail -f -n +1 /home/grabl/$GRABL_REPO/dist/grakn-core-all-linux/server/logs/grakn.log
     test-comparison-neo4j-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       type: background
       timeout: "30m"
@@ -38,7 +36,6 @@ build:
       monitor: |
         journalctl -fu neo4j
     test-comparison-grakn-and-neo4j:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       timeout: "30m"
       dependencies: [test-comparison-grakn-background, test-comparison-neo4j-background]
@@ -86,7 +83,6 @@ build:
         sleep 1800
 
     test-performance-small-grakn-cluster-1-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       filter:
         owner: graknlabs
@@ -118,7 +114,6 @@ build:
         sleep 20s
         tail -f -n +1 ./dist/grakn-cluster-all-linux/server/logs/grakn.log
     test-performance-small-grakn-cluster-2-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       filter:
         owner: graknlabs
@@ -149,7 +144,6 @@ build:
         sleep 20s
         tail -f -n +1 ./dist/grakn-cluster-all-linux/server/logs/grakn.log
     test-performance-small-grakn-cluster-3-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       filter:
         owner: graknlabs
@@ -203,7 +197,6 @@ build:
           --config-file /home/grabl/$GRABL_REPO/config/config_test.yml
 
     test-performance-small-grakn-core-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       type: background
       timeout: "30m"
@@ -236,7 +229,6 @@ build:
         sleep 10s
         tail -f -n +1 /home/grabl/$GRABL_REPO/dist/grakn-core-all-linux/server/logs/grakn.log
     test-performance-small-grakn-core:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       timeout: "30m"
       dependencies: [test-performance-small-grakn-core-background]
@@ -252,7 +244,6 @@ build:
           --api-token $GRABL_TOKEN \
           --config-file /home/grabl/$GRABL_REPO/config/config_test.yml
     test-performance-small-neo4j-background:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       type: background
       timeout: "30m"
@@ -274,7 +265,6 @@ build:
         sudo systemctl restart neo4j
         export GRABL_EXPORT_PERFORMANCE_SMALL_NEO4J_URI="${HOSTNAME}:7687"
     test-performance-small-neo4j:
-      machine: 16-core-32-gb
       image: graknlabs-ubuntu-20.04
       dependencies: [test-performance-small-neo4j-background]
       timeout: "30m"
