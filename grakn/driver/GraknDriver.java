@@ -55,7 +55,7 @@ public class GraknDriver extends TransactionalDbDriver<GraknClient.Transaction, 
 
     public void createDatabase() {
         if (client.databases().contains(database))
-            client.databases().delete(database);
+            client.databases().get(database).delete();
         client.databases().create(database);
     }
 
